@@ -18,6 +18,7 @@
     5. Exit
     */
 using System;
+using System.IO;
 
 class Program
 {
@@ -25,7 +26,6 @@ class Program
     {
         // reusable instances
         Journal theJournal = new Journal();
-        PromptGenerator randomPrompt = new PromptGenerator();
 
         // Display "Welcome to the Journal program!"
         Console.WriteLine("Welcome to the Journal program!");
@@ -63,15 +63,22 @@ class Program
                 // Console.WriteLine(entryDate); // test prints 7/12/2023
 
                 // generate and display a promtp
+                PromptGenerator randomPrompt = new PromptGenerator();
                 string promptText = randomPrompt.GetRandomPrompt();
                 Console.WriteLine(promptText);
 
                 // read the users response
-                Console.Write(">>>");
+                Console.Write(">>> ");
                 string entryText = Console.ReadLine();
 
+                // Creativity
+                // Question about Scriptures
+                Console.WriteLine("Did you read Scriptures today?");
+                Console.Write(">>> ");
+                string scriptures = Console.ReadLine();
+
                 // creat an Entry instance
-                Entry anEntry = new Entry(entryDate, promptText, entryText);
+                Entry anEntry = new Entry(entryDate, promptText, entryText, scriptures);
 
                 // add new entry to the journal
                 theJournal.AddEntry(anEntry);
@@ -87,20 +94,32 @@ class Program
             // #3
             else if (userChoice == "3")
             {
+                // prompt the user and read save-to-file name
+                Console.Write("Enter the file name to save the journal entries: ");
                 
+                string saveFile = Console.ReadLine();
+
+                // call SaveToFile method
+                theJournal.SaveToFile(saveFile);
+
+                Console.WriteLine("Journal entries saved.");
+                // Console.WriteLine(); // empty line
             }
 
             // #4
             else if (userChoice == "4")
             {
-                // prompt the user and read save-to-file name
-                Console.Write("Enter the file name to save the journal entries: ");
-                string saveFile = Console.ReadLine();
+                // ask the user for and read load-from-file name
+                Console.Write("Enter name of the file to load the journal from: ");
+                
+                string loadFile = Console.ReadLine();
 
-                // call SaveToFile method
-                theJournal.SaveToFile(saveFile);
+                // call LoadFromFile method
+                theJournal.LoadFromFile(loadFile);
+
+                Console.WriteLine("Journal entries loaded.");
+                // Console.WriteLine(); // empty line
             }
-
         }
     }
 }

@@ -23,7 +23,6 @@ public class PromptGenerator
         };
     }
     
-
     // generate prompts
     public string GetRandomPrompt()
     {
