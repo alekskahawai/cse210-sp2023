@@ -25,6 +25,13 @@ class Program
         job2._startYear = 2021;
         job2._endYear = 2023;
 
+        Job job3 = new Job();
+
+        job3._company = "VFS Global";
+        job3._jobTitle = "Director";
+        job3._startYear = 2023;
+        job3._endYear = 2025;
+
         /* Verify that you can display the jobs on the screen correctly. */
         // job1.DisplayJobDetails();
         // job2.DisplayJobDetails();
@@ -37,11 +44,24 @@ class Program
         workingResume._jobs.Add(job1);
         workingResume._jobs.Add(job2);
 
+        Resume sampleResume = new Resume();
+        sampleResume._name = "Alekseus Volleges";
+        sampleResume._jobs.Add(job3);
+
+        List<Resume> _resumes = new List<Resume>();
+        _resumes.Add(workingResume);
+        _resumes.Add(sampleResume);
+
         /* Verify that you can access and display the first job title */
         // Console.WriteLine(workingResume._jobs[0]._jobTitle);
 
         /* add a call at the end to the Display method from your Resume class to display the name and all the jobs in one line. */
-        workingResume.DisplayResume();
+        // workingResume.DisplayResume();
+
+        foreach (Resume resume in _resumes)
+        {
+            resume.DisplayResume();
+        }
 
     }
 }
