@@ -19,6 +19,6 @@ public class WritingAssignment : Assignment
         Sample Output: The Causes of World War II by Mary Waters*/
     public string GetWritingInformation()
     {
-        return $"{_title} by {_studentName}";
+        return $"{_title} by {GetStudentName()}";
     }
 }

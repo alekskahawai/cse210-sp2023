@@ -4,7 +4,7 @@ using System;
 public class Assignment
 {
     // Add the attributes as private member variables.
-    protected string _studentName;
+    private string _studentName;
     private string _topic;
 
     // Create a constructor for this class that receives a student name and topic and sets the member variables.
@@ -19,5 +19,10 @@ public class Assignment
     public string GetSummary()
     {
         return $"{_studentName} - {_topic}";
+    }
+
+    public string GetStudentName()
+    {
+        return _studentName;
     }
 }   

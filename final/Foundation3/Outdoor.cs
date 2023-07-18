@@ -11,5 +11,8 @@ public class Outdoor : Event
     
     // Behaviors:
     // *  GetFullDetails( )  :  string  // standard details + type, _weather
-
+    public string GetFullDetails()
+    {
+        return $"{GetStandardDetails()} \nType: {GetEventType()} \nWeather: {_weather}";
+    }
 }

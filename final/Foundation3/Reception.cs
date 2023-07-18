@@ -12,5 +12,9 @@ public class Reception : Event
 
     // Behaviors:
     // *  GetFullDetails( )  :  string // standard details + type, __emailRegistration
+    public string GetFullDetails()
+    {
+        return $"{GetStandardDetails()} \nType: {GetEventType()} \nRSVP: {_emailRegistration}";
+    }
 }
 

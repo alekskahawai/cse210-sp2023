@@ -4,24 +4,22 @@ public class Address
     private string _streetAddress;
     private string _city;
     private string _state;
-    private string _postalCode;
+    private string _country;
 
-    // constructor
-    public Address(string streetAddress, string city, string state, string postalCode)
+    // constructor // Address address = new Address();
+    public Address(string streetAddress, string city, string state, string country)
     {
         _streetAddress = streetAddress;
         _city = city;
         _state = state;
-        _postalCode = postalCode;
+        _country = country;
     }
-
-    // Address address = new Address();
 
     // Behaviors:
     // *  GetFullAddress( )  :  string
     public string GetFullAddress()
     {
-        return $"{_streetAddress}, {_city}, {_state}, {_postalCode}";
+        return $"{_streetAddress}, {_city}, {_state}, {_country}";
     }
 }
 

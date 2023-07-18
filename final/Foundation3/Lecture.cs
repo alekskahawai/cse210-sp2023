@@ -13,5 +13,8 @@ public class Lecture : Event
 
     // Behaviors:
     // *  GetFullDetails( )  :  string // standard details + type, _speaker, _capacity
-
+    public string GetFullDetails()
+    {
+        return $"{GetStandardDetails()} \nType: {GetEventType()} \nSpeaker: {_speaker}\nCapacity: {_capacity}";
+    }
 }
