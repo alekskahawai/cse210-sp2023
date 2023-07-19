@@ -7,6 +7,13 @@ public class Address
     private string _country;
 
     // constructor
+    public Address(string streetAddress, string city, string state, string country)
+    {
+        _streetAddress = streetAddress;
+        _city = city;
+        _state = state;
+        _country = country;
+    }
 
     // Behaviors:
     // *  IsUSA( )  :  bool

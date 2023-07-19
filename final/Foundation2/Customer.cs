@@ -5,6 +5,11 @@ public class Customer
     private Address _customerAddress;
 
     // constructor
+    public Customer(string customerName, Address customerAddress)
+    {
+        _customerName = customerName;
+        _customerAddress = customerAddress;
+    }
 
     // Behaviors:
     // * InUSA( )  :  bool
@@ -17,5 +22,11 @@ public class Customer
     public string GetCustomerName()
     {
         return _customerName;
+    }
+
+    // *  GetCustomerName( )  :  string
+    public string GetCustomerAddress()
+    {
+        return _customerAddress.GetFullAddress();
     }
 }

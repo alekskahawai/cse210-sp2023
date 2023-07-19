@@ -3,14 +3,21 @@ public class Product
     // Attributes:
     private string _productName;
     private string _id;
-    private float _price;
+    private double _price;
     private int _quantity;
 
     // constructor
+    public Product(string productName, string id, double price, int quantity)
+    {
+        _productName = productName;
+        _id = id;
+        _price = price;
+        _quantity = quantity;
+    }
 
     // Behaviors:
-    // *  SubTotal( )  :  float
-    public float SubTotal()
+    // *  SubTotal( )  :  double
+    public double ProductSubTotal()
     {
         //float subTotal = _price * _quantity;
         return _price * _quantity;
