@@ -2,19 +2,24 @@ public class Activity
 {
     // Attributes:
     private string _date; // 03 Nov 2022
-    private int _length; // length of the activity in minutes
     private string _activityType;
+    private int _length; // length of the activity in minutes
 
     // constructor
-    // public Activity
+    public Activity(string date, string activityType, int length)
+    {
+        _date = date;
+        _activityType = activityType;
+        _length = length;
+    }
 
     // Behaviors:
     // *  GetSummary( )  :  string
     // Sample Summary: 
-    // 03 Nov 2022 Running (30 min)- Distance 3.0 miles, Speed 6.0 mph, Pace: 10.0 min per mile
+    // 03 Nov 2022 Running (30 min): Distance 4.8 km, Speed: 9.7 kph, Pace: 6.9 min per km
     public string GetSummary()
     {
-        return $"{_date} {_activityType} ({_length} min)- Distance {GetDistance()} km, Speed {GetSpeed()} km/hr, Pace: {GetPace()} min per km";
+        return $"{_date} {_activityType} ({_length} min)- Distance {GetDistance():F1} km, Speed {GetSpeed():F1} kph, Pace: {GetPace():F1} min per km";
     }
 
     // *  GetLength( )  :  int           // min
@@ -24,19 +29,19 @@ public class Activity
     }
 
     // *  GetDistance( )  :  float   // km
-    public virtual float GetDistance()
+    public virtual double GetDistance()
     {
         return 0;
     }
 
     // *  GetSpeed( )  :  float    // km/hr
-    public virtual float GetSpeed()
+    public virtual double GetSpeed()
     {
         return 0;
     }
 
     // *  GetPace( )  :  float   // min/km
-    public virtual float GetPace()
+    public virtual double GetPace()
     {
         return 0;
     }
