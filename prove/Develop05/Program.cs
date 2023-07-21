@@ -1,3 +1,8 @@
+// Week 05 Develop: Eternal Quest Program. Sources:
+// https://byui-cse.github.io/cse210-ww-course-2023/week05/develop.html
+// https://byui-cse.github.io/cse210-ww-course-2023/week05/design.html
+// https://byui-cse.github.io/cse210-ww-course-2023/week05/prepare.html
+
 using System;
 
 

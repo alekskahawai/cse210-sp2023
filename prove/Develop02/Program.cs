@@ -12,7 +12,11 @@ string scriptures = Console.ReadLine();
 Entry anEntry = new Entry(entryDate, promptText, entryText, scriptures);
 */
 
-/* W02 Prove: Developer—Journal.
+// Week 02 Develop: Journal.  Sources:
+// byui-cse.github.io/cse210-ww-course-2023/week02/develop.html
+// byui-cse.github.io/cse210-ww-course-2023/week02/design.html
+// byui-cse.github.io/cse210-ww-course-2023/week02/prepare.html
+/* 
 This program must contain the following features:
 
 1. Write a new entry - Show the user a random prompt (from a list that you create), and save their response, the prompt, and the date as an Entry.
