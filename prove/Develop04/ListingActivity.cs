@@ -1,4 +1,4 @@
-// Keeps track of a single word and whether it is shown or hidden.
+
 public class ListingActivity : Activity
 {
     // Attributes:
