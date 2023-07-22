@@ -9,9 +9,15 @@ public class Word
 
     // constructor
     /* This constructor should accept the text of the word to save it as an attribute. In addition, the constructor will need to set the initial visibility of the word (whether it is shown or hidden). Notice that you should not need to pass in the visibility of the word. It can be set to be visible by default. */
-    public Word(string wordText)
+    public Word(string wordText, bool isHidden)
     {
         _wordText = wordText;
+        _isHidden = isHidden;
+    }
+
+    public Word()
+    {
+        
     }
 
     // Behaviors:
@@ -22,6 +28,10 @@ public class Word
     }
 
     // Show() : void
+    public void Show()
+    {
+        _isHidden = false;
+    }
 
     // IsHidden() : bool
     public bool IsHidden()

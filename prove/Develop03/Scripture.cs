@@ -24,20 +24,54 @@ public class Scripture
         List<string> result = text.Split(' ').ToList(); // String.Join(" ", result)
 
         // add to the words list
+        // Source: https://www.loekvandenouweland.com/content/random-boolean-in-csharp.html
+
+        int countRuns = 0;
         foreach (string i in result)
         {
-            Word word = new Word(i);
-            _words.Add(word);
-        }
+            if (countRuns == 0)
+                {
+                    Random random = new Random();
+                    bool randomBool = random.Next(0) == 1;
+                    bool toHide = randomBool;
+                    Word word = new Word(i, toHide);
+                    _words.Add(word);
 
+                    countRuns += 1;
+                }
+            else /* if (countRuns > 0) */
+                {
+                    Random random = new Random();
+                    bool randomBool = random.Next(countRuns * 10) == 1;
+                    bool toHide = randomBool;
+                    Word word = new Word(i, toHide);
+                    _words.Add(word);
+
+                    countRuns += 1;
+                }
+                
+            /* countRuns += 1; */
+        }
+        /* countRuns += 1; */
     }
 
     // Behaviors:
     // HideRandomWords(numberToHide : int) : void
     // call the Hide() method on the Word objects
+    
+    // int countRuns = 0;
     public void HideRandomWords(int numberToHide)
-    {
+    {   
+        /* List<string> result = text.Split(' ').ToList(); */
 
+        /* foreach (Word i in _words)
+        {
+            Random random = new Random();
+            bool randomBool = random.Next(countRuns * 10) == 1;
+            bool toHide = randomBool;
+            Word word = new Word(i, toHide);
+            _words.Add(word);
+        } */
     }
 
     // GetDisplayText() : string      // String.Join(" ", result)
