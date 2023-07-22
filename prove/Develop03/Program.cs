@@ -1,7 +1,5 @@
 /* Submission comment.
-Code's logic closely follows Instructor's get-started video.
-
-Creativity:  */
+Code's logic closely follows Instructor's get-started video.  */
 
 // Week 03 Develop: Scripture Memorizer.  Sources:
 // byui-cse.github.io/cse210-ww-course-2023/week03/develop.html
